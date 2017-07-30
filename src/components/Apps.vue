@@ -3,8 +3,10 @@
     <mt-swipe :auto="4000">
       <!-- 轮播图部分-->
       <mt-swipe-item v-for='item in list'><img :src="item.img" alt=""/></mt-swipe-item>
-
     </mt-swipe>
+    <!-- 轮播图部分结束-->
+
+    <!--导航部分开始-->
     <div class="mui-content">
       <ul class="mui-table-view mui-grid-view mui-grid-9">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
@@ -51,6 +53,7 @@
         </li>
       </ul>
     </div>
+    <!-- 导航部分结束-->
   </div>
 </template>
 <script type='es6'>
@@ -64,7 +67,6 @@
     },
     created(){
       this.$http.get(url).then(function(data){
-        console.log(data)
         this.list = data.body.message
       })
     }
@@ -72,15 +74,10 @@
 </script>
 <style lang='less' scoped>
   #tmpl {
-
   .mint-swipe {
     height: 300px;
-    background-color: red;
-
   .mint-swipe-items-wrap {
-
   .mint-swipe-item {
-
   img {
     width: 100%;
     height: 100%;

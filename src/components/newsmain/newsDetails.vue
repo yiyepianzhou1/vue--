@@ -5,7 +5,7 @@
         <router-link to='/home'>
           <mt-button icon="back"></mt-button>
         </router-link>
-        <mt-button>返回</mt-button>
+        <mt-button @click="goback">返回</mt-button>
       </div>
     </mt-header>
     <!--<h2>{{ids}}</h2>-->
@@ -34,9 +34,14 @@
     },
     created(){
       this.$http.get(this.url + this.ids).then(function (data) {
-        console.log(data.body)
+        //console.log(data.body)
         this.list = data.body.message
       })
+    },
+    methods:{
+      goback: function () {
+        this.$router.go(-1)
+      }
     }
   }
 </script>

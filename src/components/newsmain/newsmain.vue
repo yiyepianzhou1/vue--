@@ -42,6 +42,7 @@
        components:{},
        methods:{
          handleClose:function(){
+           this.$router.go(-1)
          }
        }
    }

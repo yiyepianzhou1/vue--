@@ -3,7 +3,7 @@
     <h1>公共组件评论组件{{ids}}</h1>
 
     <div class="comment_tops">
-      <h4>提交评论<span>返回</span></h4>
+      <h4>提交评论<span @click="goback">返回</span></h4>
 
       <div class="text">
         <textarea placeholder="请输入您的评论" v-model="texts"></textarea>
@@ -29,7 +29,7 @@
   </div>
 </template>
 <!---->
-<script type='es6'>
+<script type="es6">
   import { Toast } from 'mint-ui';
   import  Vue from  'vue'
   export default {
@@ -81,6 +81,9 @@
             this.gets()
           })
         }
+      },
+      goback:function(){
+        this.$router.go(-1)
       }
     }
   }
