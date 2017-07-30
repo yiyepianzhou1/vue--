@@ -6,7 +6,6 @@
     </header>
     <!--路由导航部分-->
     <router-view></router-view>
-
     <!-- 底部部分-->
     <nav class="mui-bar mui-bar-tab">
       <router-link class="mui-tab-item" to="/home">

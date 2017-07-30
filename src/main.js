@@ -15,6 +15,8 @@ import Apps from './components/Apps.vue'
 import buycars from './components/shopcar/shopcar.vue'
 import  newsmain from './components/newsmain/newsmain.vue'
 import  newsDetails from  './components/newsmain/newsDetails.vue'
+import imgshare from './components/imgshare/imgshare.vue'
+import imgshareDetails from './components/imgshare/imgshareDetails.vue'
 //实例化路由；
 var router = new VueRoute({
   mode:'history',
@@ -25,6 +27,8 @@ var router = new VueRoute({
     {path:'/shopcar',component:buycars},
     {path:'/newsmain',component:newsmain},
     {path:'/newsDetails',component:newsDetails},
+    {path:'/imgshare',component:imgshare},
+    {path:'/imgshareDetails',component:imgshareDetails},
     {path:'/',redirect:'/home'},
   ]
 })
