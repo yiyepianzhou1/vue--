@@ -1,0 +1,22 @@
+body{
+	background-color: white;
+}
+#app{
+  margin: 0;
+}
+ #header.mui-bar{
+  background-color: #26a2ff;
+}
+
+.router-link-active{
+	color:#007aff;
+}
+
+#tmpl{
+	margin-top: 45px;
+	margin-bottom: 50px;
+}
+.mui-bar-tab .mui-active{
+  color: #007aff;
+}
+
