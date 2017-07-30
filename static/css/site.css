@@ -19,4 +19,8 @@ body{
 .mui-bar-tab .mui-active{
   color: #007aff;
 }
+ul li,ol li{
+  list-style: none;
+}
+
 

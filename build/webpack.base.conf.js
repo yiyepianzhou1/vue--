@@ -3,10 +3,9 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
-
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -31,6 +30,10 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
+      },
+      {
+        test: /\.less$/,
+        loader: "style-loader!css-loader!less-loader",
       },
       {
         test: /\.js$/,
