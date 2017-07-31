@@ -44,6 +44,8 @@
       }
     }
   }
+  //import '../../../static/iscroll/iscroll.css';
+
 </script>
 <style lang='less' scoped>
   .mint-header {
