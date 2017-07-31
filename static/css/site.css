@@ -11,7 +11,13 @@ body{
 .router-link-active{
 	color:#007aff;
 }
-
+.clearfix::after {
+  content: " ";
+  display: block;
+  height: 0px;
+  clear: both;
+  zoom: 1;
+}
 #tmpl{
 	margin-top: 45px;
 	margin-bottom: 50px;

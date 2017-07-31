@@ -11,6 +11,7 @@ Vue.use(Mintui)
 Vue.use(resource)
 
 //组件的导入
+
 import Apps from './components/Apps.vue'
 import buycars from './components/shopcar/shopcar.vue'
 import  newsmain from './components/newsmain/newsmain.vue'
