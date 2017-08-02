@@ -1,6 +1,6 @@
 <template>
-    <div id="tmpl">
-      <h1>视频专区</h1>
+    <div  id="tmpl">
+      <h1>购买详情页</h1>
     </div>
 </template>
 <script type='es6'>

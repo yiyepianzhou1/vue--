@@ -18,6 +18,10 @@ import  newsmain from './components/newsmain/newsmain.vue'
 import  newsDetails from  './components/newsmain/newsDetails.vue'
 import imgshare from './components/imgshare/imgshare.vue'
 import imgshareDetails from './components/imgshare/imgshareDetails.vue'
+import shoping from './components/shoping/shoping.vue'
+import shopingDetails from './components/shoping/shopingDetails.vue'
+import video from './components/video/video.vue'
+import videoDetails from './components/video/videoDetails.vue'
 //实例化路由；
 var router = new VueRoute({
   mode:'history',
@@ -30,6 +34,10 @@ var router = new VueRoute({
     {path:'/newsDetails',component:newsDetails},
     {path:'/imgshare',component:imgshare},
     {path:'/imgshareDetails',component:imgshareDetails},
+    {path:'/shoping',component:shoping},
+    {path:'/shopingDetails',component:shopingDetails},
+    {path:'/video',component:video},
+    {path:'/videoDetails',component:videoDetails},
     {path:'/',redirect:'/home'},
   ]
 })
