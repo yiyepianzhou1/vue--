@@ -17,7 +17,7 @@
         <span class="mui-tab-label">会员</span>
       </router-link>
       <router-link class="mui-tab-item" to="/shopcar">
-        <span class="mui-icon mui-icon-email"><span class="mui-badge">0</span></span>
+        <span class="mui-icon mui-icon-email"><span class="mui-badge" id="countss">{{nums}}</span></span>
         <span class="mui-tab-label">购物车</span>
       </router-link>
       <router-link class="mui-tab-item" to="/">
@@ -29,19 +29,41 @@
 </template>
 
 <script type='es6'>
+  import {vm} from './kits/vms.js'
+  vm.$on('adds', function (counts) {
+    //alert(counts)
+    var countss = document.querySelector('#countss');
+    countss.innerText = parseInt(countss.innerText) + counts;
 
-export default {
-  name: 'app'
-}
+  })
+  export default {
+    name: 'app',
+    data(){
+      return {
+        nums: 0
+      }
+    },
+    mounted(){
+      //this.getscounts()
+      //console.log(this.nums)
+    },
+    methods: {
+      //getscounts(){
+      //  vm.$on('adds',function(counts){
+      //    alert(counts)
+      //    //var countss = document.querySelector('#countss');
+      //    //countss.innerText = parseInt(countss.innerText)+counts
+      //    this.nums = counts;
+      //    console.log(this)
+      //  })
+      //}
+      //adds(inout){
+      //  this.nums = inout;
+      //}
+
+    }
+  }
 </script>
 
 <style scoped>
-/*#app {*/
-  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
-  /*-webkit-font-smoothing: antialiased;*/
-  /*-moz-osx-font-smoothing: grayscale;*/
-  /*text-align: center;*/
-  /*color: #2c3e50;*/
-  /*margin-top: 60px;*/
-/*}*/
 </style>

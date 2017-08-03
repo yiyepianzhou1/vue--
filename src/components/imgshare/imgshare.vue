@@ -27,7 +27,6 @@
       </ul>
     </div>
     <!-- 图片部分结束-->
-
   </div>
 </template>
 <script type='es6'>

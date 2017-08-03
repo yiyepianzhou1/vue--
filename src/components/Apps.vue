@@ -2,7 +2,8 @@
   <div id="tmpl">
     <mt-swipe :auto="4000">
       <!-- 轮播图部分-->
-      <mt-swipe-item v-for='item in list'><img :src="item.img" alt=""/></mt-swipe-item>
+      <mt-swipe-item v-for='item in list'>
+        <img :src="item.img" alt=""/></mt-swipe-item>
     </mt-swipe>
     <!-- 轮播图部分结束-->
 
