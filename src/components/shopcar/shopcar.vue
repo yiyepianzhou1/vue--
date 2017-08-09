@@ -10,16 +10,13 @@
               <h4>{{item.title}}</h4>
               <div class="shopcar_lis_texts_btn">
                 <span>￥{{item.sell_price}}</span>
-                <button type="button" @click="miuns">-</button>
-                <input type="text" :value="counts"/>
-                <button type="button" @click="adds">+</button>
+                    <addsminus :counts="item.cou"></addsminus>
                 <a href="javascript:;">删除</a>
               </div>
             </div>
           </li>
         </ul>
       </div>
-
 
       <!-- 底部结算部分开始-->
       <div class="shopcarfooter">
@@ -40,6 +37,7 @@
 <script type='es6'>
   import Vue from 'vue'
   import { Switch } from 'mint-ui';
+  import addsminus from '../../subcom/addmiunscomt.vue'
   Vue.component(Switch.name, Switch);
   import {getitems,changecounts} from '../../kits/locals.js'
      export default {
@@ -51,6 +49,7 @@
            list:[]
          }
      },
+       components:{addsminus},
        created(){
          this.getsinfo()
          //console.log(objss)
@@ -59,33 +58,31 @@
        methods:{
           getcounobj(){
             //console.log(this.ids)
-          }
-         ,
+          },
          getsinfo(){
            var countsobj = changecounts()
            var nums=''
+           var self = this
            console.log(countsobj);
            for(var key in countsobj){
              nums+=key+','
-             this.counts=countsobj[key]
-           }
+           this.counts=countsobj[key]
+           //alert(this.counts)
+         }
           this.ids = nums.substring(0,nums.length-1)
            var url = 'http://182.254.146.100:8899/api/goods/getshopcarlist/'
            this.$http.get(url+this.ids).then(function(datas){
-             console.log(datas.body);
              this.list = datas.body.message
+             datas.body.message.forEach(function(value){
+               //value.cou = self.cous
+               //将获取的countsobj的值赋值给数据中的cou以方便在v-for中将数据动态的渲染
+               //
+               value.cou = countsobj[value.id]
+             })
            })
          },
-         adds(){
-           this.counts++
-         },
-         miuns(){
-           this.counts--;
-           if(this.counts<=0){
-             this.counts=0
-           }
-         }
        }
+
    }
 
 </script>
@@ -120,12 +117,12 @@ span{
   color: red;
   font-size: 17px;
 }
-input,button{
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 0;
-}
+/*input,button{*/
+  /*width: 30px;*/
+  /*height: 30px;*/
+  /*text-align: center;*/
+  /*padding: 0;*/
+/*}*/
 a{
   font-size: 14px;
 }

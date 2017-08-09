@@ -12,7 +12,6 @@ export function setitem(values){
 //获取数据方法
 export  function getitems(){
   var values = localStorage.getItem(keys) || "[]";
-
   return JSON.parse(values)
 }
 //将获取的数据进行处理：{88:2}
@@ -33,5 +32,7 @@ export function changecounts(){
   }
   return countobjs
 }
+//添加删除数据功能
 export function removes(){
+
 }
